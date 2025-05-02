@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LecteurIptv.Backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+37309765160059568fcbf715f91d7390bec0a5d6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8edefa3844893804a16023c11764d9b5cfaaeabb")]
 [assembly: System.Reflection.AssemblyProductAttribute("LecteurIptv.Backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LecteurIptv.Backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
