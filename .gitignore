@@ -1,0 +1,35 @@
+# Frontend (Vue/Nuxt)
+/frontend/node_modules
+/frontend/.nuxt
+/frontend/dist
+/frontend/.env
+/frontend/.env.local
+/frontend/.env.*.local
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+
+# Backend (C#/.NET)
+/backend/bin/
+/backend/obj/
+/backend/.vs/
+/backend/*.user
+/backend/appsettings.*.json
+/backend/Properties/launchSettings.json
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers d'éditeur
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Fichiers temporaires
+*.log
+*.tmp
