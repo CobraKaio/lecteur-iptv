@@ -29,14 +29,16 @@ lecteur-iptv/
 - TailwindCSS pour le styling
 
 ### Backend
-- ASP.NET Core 7
-- C# 11
-- Entity Framework Core (pour les futures fonctionnalités de persistance)
+- ASP.NET Core 8
+- C# 12
+- Entity Framework Core avec SQLite
+- JWT pour l'authentification
+- xUnit et Moq pour les tests unitaires
 
 ## Prérequis
 
 - Node.js 18+ et npm pour le frontend
-- .NET SDK 7.0+ pour le backend
+- .NET SDK 8.0+ pour le backend
 - FFmpeg (optionnel, pour la conversion)
 - Git
 
@@ -62,24 +64,43 @@ npm run dev
 ```bash
 cd backend
 dotnet restore
-dotnet run
+dotnet run --project LecteurIptv.Backend
+```
+
+### Exécution des tests
+
+```bash
+cd backend
+dotnet test
 ```
 
 ## Fonctionnalités
 
+### Frontend
 - ✅ Parsing de playlists M3U/M3U8
 - ✅ Affichage des chaînes par groupes
-- ✅ Lecture des flux vidéo
-- 🔄 Recherche et filtrage des chaînes
-- 🔄 Gestion des favoris
-- 🔄 Conversion de formats avec FFmpeg
+- ✅ Lecture des flux vidéo HLS
+- ✅ Authentification avec JWT
+- ✅ Gestion des favoris
+- ✅ Historique de visionnage
+- 🔄 Recherche et filtrage avancés
 - 🔜 Guide des programmes EPG
 - 🔜 Enregistrement de flux
+
+### Backend
+- ✅ API RESTful pour chaînes, VOD, utilisateurs
+- ✅ Authentification JWT
+- ✅ Gestion des favoris et historique
+- ✅ Tests unitaires pour les services
+- 🔄 Pagination et filtrage
+- 🔜 Parsing XMLTV pour EPG
 
 ## Documentation
 
 - [Architecture](docs/ARCHITECTURE.md) - Description technique de l'architecture
 - [Workflow](docs/WORKFLOW.md) - Processus de développement
+- [Test Plan](docs/test-plan.md) - Plan de test du projet
+- [Documentation Projet](documentation-projet.md) - Documentation détaillée du projet
 
 ## Contribution
 
