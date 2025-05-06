@@ -97,10 +97,11 @@ dotnet test
 
 ## Documentation
 
+- [Documentation Complète](documentation-complete.md) - Documentation exhaustive du projet (structure, technologies, fonctionnalités)
+- [Documentation Projet](documentation-projet.md) - Documentation détaillée du projet
 - [Architecture](docs/ARCHITECTURE.md) - Description technique de l'architecture
 - [Workflow](docs/WORKFLOW.md) - Processus de développement
 - [Test Plan](docs/test-plan.md) - Plan de test du projet
-- [Documentation Projet](documentation-projet.md) - Documentation détaillée du projet
 
 ## Contribution
 
