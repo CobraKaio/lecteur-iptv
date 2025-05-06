@@ -7,7 +7,7 @@ namespace LecteurIptv.Backend.Models
     /// <summary>
     /// Représente un utilisateur de l'application
     /// </summary>
-    public class User
+    public class User : BaseEntity
     {
         /// <summary>
         /// Identifiant unique de l'utilisateur
@@ -73,16 +73,6 @@ namespace LecteurIptv.Backend.Models
         public DateTime? LastLoginAt { get; set; }
 
         /// <summary>
-        /// Date de création de l'utilisateur
-        /// </summary>
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-
-        /// <summary>
-        /// Date de dernière mise à jour de l'utilisateur
-        /// </summary>
-        public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
-
-        /// <summary>
         /// Chaînes favorites de l'utilisateur
         /// </summary>
         public virtual ICollection<UserFavoriteChannel> FavoriteChannels { get; set; } = new List<UserFavoriteChannel>();
@@ -91,5 +81,10 @@ namespace LecteurIptv.Backend.Models
         /// Éléments VOD favoris de l'utilisateur
         /// </summary>
         public virtual ICollection<UserFavoriteVod> FavoriteVods { get; set; } = new List<UserFavoriteVod>();
+
+        /// <summary>
+        /// Historique de visionnage de l'utilisateur
+        /// </summary>
+        public virtual ICollection<UserHistory> ViewingHistory { get; set; } = new List<UserHistory>();
     }
 }

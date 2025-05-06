@@ -7,7 +7,7 @@ namespace LecteurIptv.Backend.Models
     /// <summary>
     /// Représente une chaîne favorite d'un utilisateur
     /// </summary>
-    public class UserFavoriteChannel
+    public class UserFavoriteChannel : BaseEntity
     {
         /// <summary>
         /// Identifiant unique de la relation

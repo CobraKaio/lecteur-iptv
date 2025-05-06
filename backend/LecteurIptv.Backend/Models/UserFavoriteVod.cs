@@ -7,7 +7,7 @@ namespace LecteurIptv.Backend.Models
     /// <summary>
     /// Représente un élément VOD favori d'un utilisateur
     /// </summary>
-    public class UserFavoriteVod
+    public class UserFavoriteVod : BaseEntity
     {
         /// <summary>
         /// Identifiant unique de la relation

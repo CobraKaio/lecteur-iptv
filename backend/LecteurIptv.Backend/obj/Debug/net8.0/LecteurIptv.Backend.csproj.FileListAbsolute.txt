@@ -126,3 +126,10 @@
 /home/walidlt/Documents/augment-projects/POTO IP 1/lecteur-iptv/backend/LecteurIptv.Backend/bin/Debug/net8.0/runtimes/win-arm64/native/e_sqlite3.dll
 /home/walidlt/Documents/augment-projects/POTO IP 1/lecteur-iptv/backend/LecteurIptv.Backend/bin/Debug/net8.0/runtimes/win-x64/native/e_sqlite3.dll
 /home/walidlt/Documents/augment-projects/POTO IP 1/lecteur-iptv/backend/LecteurIptv.Backend/bin/Debug/net8.0/runtimes/win-x86/native/e_sqlite3.dll
+/home/walidlt/Documents/augment-projects/POTO IP 1/lecteur-iptv/backend/LecteurIptv.Backend/bin/Debug/net8.0/BCrypt.Net-Next.dll
+/home/walidlt/Documents/augment-projects/POTO IP 1/lecteur-iptv/backend/LecteurIptv.Backend/bin/Debug/net8.0/Microsoft.Bcl.Memory.dll
+/home/walidlt/Documents/augment-projects/POTO IP 1/lecteur-iptv/backend/LecteurIptv.Backend/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/home/walidlt/Documents/augment-projects/POTO IP 1/lecteur-iptv/backend/LecteurIptv.Backend/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/walidlt/Documents/augment-projects/POTO IP 1/lecteur-iptv/backend/LecteurIptv.Backend/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/home/walidlt/Documents/augment-projects/POTO IP 1/lecteur-iptv/backend/LecteurIptv.Backend/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/home/walidlt/Documents/augment-projects/POTO IP 1/lecteur-iptv/backend/LecteurIptv.Backend/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll

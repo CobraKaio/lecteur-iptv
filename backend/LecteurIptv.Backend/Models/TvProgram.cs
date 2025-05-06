@@ -7,7 +7,7 @@ namespace LecteurIptv.Backend.Models
     /// <summary>
     /// Représente un programme TV
     /// </summary>
-    public class TvProgram
+    public class TvProgram : BaseEntity
     {
         /// <summary>
         /// Identifiant unique du programme
@@ -101,15 +101,5 @@ namespace LecteurIptv.Backend.Models
         /// </summary>
         [MaxLength(50)]
         public string Season { get; set; } = string.Empty;
-
-        /// <summary>
-        /// Date de création du programme
-        /// </summary>
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-
-        /// <summary>
-        /// Date de dernière mise à jour du programme
-        /// </summary>
-        public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
     }
 }

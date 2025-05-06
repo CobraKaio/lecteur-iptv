@@ -47,6 +47,9 @@ namespace LecteurIptv.Backend.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("INTEGER");
 
+                    b.Property<bool>("IsFeatured")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Language")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -248,6 +251,12 @@ namespace LecteurIptv.Backend.Migrations
                     b.Property<int>("ChannelId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("UserId")
                         .HasColumnType("INTEGER");
 
@@ -269,6 +278,12 @@ namespace LecteurIptv.Backend.Migrations
                     b.Property<DateTime>("AddedAt")
                         .HasColumnType("TEXT");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("UserId")
                         .HasColumnType("INTEGER");
 
@@ -282,6 +297,57 @@ namespace LecteurIptv.Backend.Migrations
                     b.HasIndex("VodItemId");
 
                     b.ToTable("UserFavoriteVods");
+                });
+
+            modelBuilder.Entity("LecteurIptv.Backend.Models.UserHistory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ContentId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ContentImageUrl")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ContentTitle")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ContentType")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("DurationSeconds")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("PositionSeconds")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("ViewedAt")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("ViewedAt");
+
+                    b.ToTable("UserHistory");
                 });
 
             modelBuilder.Entity("LecteurIptv.Backend.Models.VodItem", b =>
@@ -425,6 +491,17 @@ namespace LecteurIptv.Backend.Migrations
                     b.Navigation("VodItem");
                 });
 
+            modelBuilder.Entity("LecteurIptv.Backend.Models.UserHistory", b =>
+                {
+                    b.HasOne("LecteurIptv.Backend.Models.User", "User")
+                        .WithMany("ViewingHistory")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("LecteurIptv.Backend.Models.Channel", b =>
                 {
                     b.Navigation("Programs");
@@ -435,6 +512,8 @@ namespace LecteurIptv.Backend.Migrations
                     b.Navigation("FavoriteChannels");
 
                     b.Navigation("FavoriteVods");
+
+                    b.Navigation("ViewingHistory");
                 });
 #pragma warning restore 612, 618
         }

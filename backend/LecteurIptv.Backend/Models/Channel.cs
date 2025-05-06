@@ -8,7 +8,7 @@ namespace LecteurIptv.Backend.Models
     /// <summary>
     /// Représente une chaîne de télévision
     /// </summary>
-    public class Channel
+    public class Channel : BaseEntity, IValidatableObject
     {
         /// <summary>
         /// Identifiant unique de la chaîne
@@ -28,12 +28,14 @@ namespace LecteurIptv.Backend.Models
         /// </summary>
         [Required]
         [MaxLength(500)]
+        [Url(ErrorMessage = "L'URL du flux doit être une URL valide")]
         public string StreamUrl { get; set; } = string.Empty;
 
         /// <summary>
         /// URL du logo de la chaîne
         /// </summary>
         [MaxLength(500)]
+        [Url(ErrorMessage = "L'URL du logo doit être une URL valide")]
         public string LogoUrl { get; set; } = string.Empty;
 
         /// <summary>
@@ -78,23 +80,42 @@ namespace LecteurIptv.Backend.Models
         public bool IsActive { get; set; } = true;
 
         /// <summary>
+        /// Indique si la chaîne est mise en avant
+        /// </summary>
+        public bool IsFeatured { get; set; } = false;
+
+        /// <summary>
         /// Ordre d'affichage de la chaîne
         /// </summary>
         public int DisplayOrder { get; set; } = 0;
 
         /// <summary>
-        /// Date de création de la chaîne
-        /// </summary>
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-
-        /// <summary>
-        /// Date de dernière mise à jour de la chaîne
-        /// </summary>
-        public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
-
-        /// <summary>
         /// Programmes associés à la chaîne
         /// </summary>
         public virtual ICollection<TvProgram> Programs { get; set; } = new List<TvProgram>();
+
+        /// <summary>
+        /// Valide que les URLs sont correctement formatées
+        /// </summary>
+        /// <param name="validationContext">Contexte de validation</param>
+        /// <returns>Liste des erreurs de validation</returns>
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            // Valider StreamUrl
+            if (!string.IsNullOrEmpty(StreamUrl) && !Uri.TryCreate(StreamUrl, UriKind.Absolute, out _))
+            {
+                yield return new ValidationResult(
+                    "L'URL du flux doit être une URL absolue valide",
+                    new[] { nameof(StreamUrl) });
+            }
+
+            // Valider LogoUrl si elle n'est pas vide
+            if (!string.IsNullOrEmpty(LogoUrl) && !Uri.TryCreate(LogoUrl, UriKind.Absolute, out _))
+            {
+                yield return new ValidationResult(
+                    "L'URL du logo doit être une URL absolue valide",
+                    new[] { nameof(LogoUrl) });
+            }
+        }
     }
 }

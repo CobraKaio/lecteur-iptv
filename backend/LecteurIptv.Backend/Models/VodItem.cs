@@ -6,7 +6,7 @@ namespace LecteurIptv.Backend.Models
     /// <summary>
     /// Représente un élément VOD (Video On Demand)
     /// </summary>
-    public class VodItem
+    public class VodItem : BaseEntity
     {
         /// <summary>
         /// Identifiant unique de l'élément VOD
@@ -112,15 +112,5 @@ namespace LecteurIptv.Backend.Models
         /// Ordre d'affichage de l'élément VOD
         /// </summary>
         public int DisplayOrder { get; set; } = 0;
-
-        /// <summary>
-        /// Date de création de l'élément VOD
-        /// </summary>
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-
-        /// <summary>
-        /// Date de dernière mise à jour de l'élément VOD
-        /// </summary>
-        public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
     }
 }
