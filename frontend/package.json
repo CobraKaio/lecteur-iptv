@@ -22,7 +22,7 @@
     "@nuxtjs/tailwindcss": "^6.14.0",
     "@pinia/nuxt": "^0.11.0",
     "@types/video.js": "^7.3.58",
-    "hls.js": "^1.6.2",
+    "hls.js": "^1.6.14",
     "pinia": "^3.0.2",
     "video.js": "^8.22.0"
   }
